@@ -15,17 +15,11 @@ new_targets = ''
 for index, row in df.iterrows():
     location = row['location']
     target = row['target']
-    #labels = row['labels']
+   
     new_targets += f'  - job_name: {location}\n'
     new_targets += '    static_configs:\n'
     new_targets += f'   - targets: ["{target}"]\n'
     
-    #if pd.notna(labels):
-    #    new_targets += '    labels:\n'
-    #    for label in labels.split(','):
-    #        key, value = label.split(':')
-    #        new_targets += f'      {key.strip()}: {value.strip()}\n'
-
     new_targets += '\n'
 
 # Insertar las nuevas configuraciones en el archivo prometheus.yml
