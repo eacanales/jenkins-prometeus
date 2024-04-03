@@ -35,4 +35,4 @@ scrape_configs:
 
   - job_name: 'Docker Containers'
     static_configs:
-    - targets: ['172.28.73.124:8080']
+    - targets: ['blade:8080']
